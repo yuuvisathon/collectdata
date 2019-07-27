@@ -29,8 +29,7 @@ def push_file(data, machine_id, which_type):
     paramDict = {}
     baseUrl = 'https' + '://' + 'api.yuuvis.io'
 
-    headerDict['Ocp-Apim-Subscription-Key'] = '3f1d89b30d1a46aea1f21de3b4c7ef89'
-    import pdb; pdb.set_trace()
+    headerDict['Ocp-Apim-Subscription-Key'] = ''
     session = requests.Session()
     multipart_form_data = {
         'data': ('metadata.json', json.dumps(BASE_META), 'application/json'),
