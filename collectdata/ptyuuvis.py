@@ -3,6 +3,8 @@ push the data to yuuvis
 """
 import requests
 import json
+import os
+
 
 BASE_META = {
     "objects": [{
@@ -29,7 +31,7 @@ def push_file(data, machine_id, which_type):
     paramDict = {}
     baseUrl = 'https' + '://' + 'api.yuuvis.io'
 
-    headerDict['Ocp-Apim-Subscription-Key'] = ''
+    headerDict['Ocp-Apim-Subscription-Key'] = os.environ['YUUVIS']
     session = requests.Session()
     multipart_form_data = {
         'data': ('metadata.json', json.dumps(BASE_META), 'application/json'),
@@ -37,6 +39,6 @@ def push_file(data, machine_id, which_type):
     }
 
     response = session.post(str(baseUrl+'/dms/objects'), files=multipart_form_data, headers=headerDict)
-    print(response.json())
+    return response.json()
 
     
