@@ -12,6 +12,7 @@ setup(
     description='get all the datas',
     long_description=open('README.md').read(),
     install_requires=[
-        "pyxhook==1.0.0"
+        "pyxhook==1.0.0",
+        "requests=2.18.4"
     ],
 )
