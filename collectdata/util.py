@@ -9,5 +9,5 @@ def run_util(which_one, where=''):
     if where:
         os.chwd(where)
     
-    return subprocess.call(which_one.split(','))
+    return subprocess.check_output(which_one.split(','))
 
