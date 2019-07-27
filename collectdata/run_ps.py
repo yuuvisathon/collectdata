@@ -2,8 +2,8 @@
 
 import os
 
-from util import call_linux
+from collectdata.util import run_util
 
+def get_ps():
+    return run_util("ps")
 
-def get_ls():
-    pass

@@ -8,5 +8,6 @@ import subprocess
 def run_util(which_one, where=''):
     if where:
         os.chwd(where)
-    return os.subprocess([which_one.split(',')])
+    
+    return subprocess.call(which_one.split(','))
 

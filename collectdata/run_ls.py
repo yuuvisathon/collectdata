@@ -2,7 +2,7 @@
 
 import os
 
-from util import call_linux
+from util import run_util
 
 
 def get_ls():
