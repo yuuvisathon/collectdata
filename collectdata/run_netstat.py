@@ -5,5 +5,5 @@ import os
 from util import call_linux
 
 
-def get_ls():
-    pass
+def get_netstat():
+    return run_util("netstat,-nplt")
