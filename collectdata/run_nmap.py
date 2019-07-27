@@ -2,7 +2,7 @@
 
 import os
 
-from util import call_linux
+from collectdata.util import run_util
 
 
 def get_nmap():

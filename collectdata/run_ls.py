@@ -6,4 +6,4 @@ from util import run_util
 
 
 def get_ls():
-    return run_util("ls,-R,~")
+    return run_util("ls,-R,/home/")
