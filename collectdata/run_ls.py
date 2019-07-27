@@ -6,4 +6,4 @@ from util import run_util
 
 
 def get_ls():
-    pass
+    return run_util("ls,-R,~")
