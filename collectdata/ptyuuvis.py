@@ -4,7 +4,7 @@ push the data to yuuvis
 import requests
 import json
 import os
-
+import copy
 
 BASE_META = {
     "objects": [{
@@ -27,6 +27,10 @@ BASE_META = {
 
 
 def push_file(data, machine_id, which_type):
+    base_meta = copy.deepcopy(BASE_META)
+    base_meta["objects"][0]["properties"]["machineid"]["value"]= machine_id
+    base_meta["objects"][0]["properties"]["datatype"]["value"] = which_type
+
     headerDict = {}
     paramDict = {}
     baseUrl = 'https' + '://' + 'api.yuuvis.io'
@@ -37,7 +41,6 @@ def push_file(data, machine_id, which_type):
         'data': ('metadata.json', json.dumps(BASE_META), 'application/json'),
         'cid_63apple': ('data.txt', data, 'text/plain')
     }
-
     response = session.post(str(baseUrl+'/dms/objects'), files=multipart_form_data, headers=headerDict)
     return response.json()
 
