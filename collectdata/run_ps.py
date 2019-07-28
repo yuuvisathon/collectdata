@@ -5,5 +5,5 @@ import os
 from collectdata.util import run_util
 
 def get_ps():
-    return run_util("ps")
+    return run_util("ps,-e")
 
