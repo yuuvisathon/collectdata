@@ -38,7 +38,7 @@ def push_file(data, machine_id, which_type):
     headerDict['Ocp-Apim-Subscription-Key'] = os.environ['YUUVIS']
     session = requests.Session()
     multipart_form_data = {
-        'data': ('metadata.json', json.dumps(BASE_META), 'application/json'),
+        'data': ('metadata.json', json.dumps(base_meta), 'application/json'),
         'cid_63apple': ('data.txt', data, 'text/plain')
     }
     response = session.post(str(baseUrl+'/dms/objects'), files=multipart_form_data, headers=headerDict)
